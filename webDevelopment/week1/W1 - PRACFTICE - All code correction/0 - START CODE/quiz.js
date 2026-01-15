@@ -45,28 +45,78 @@ let score = 0;
 // Hide a given element
 function hide(element) {
   // TODO
+  element.style.display = "none";
 }
 
 function show(element) {
   // TODO
+  element.style.display = "block";
 }
 
 function onStart() {
+  // hide dom start when we start the quiz
+  hide(dom_start);
   // Render the current question
+  renderQuestion();
   // Display the quiz view,
+  show(dom_quiz);
+
 }
 
 function renderQuestion() {
   // Render the current question on the quiz view
+  const q = questions[runningQuestionIndex];
+  dom_question.innerHTML = `<p>${q.title}</p>`;
+  dom_choiceA.innerHTML = q.choiceA;
+  dom_choiceB.innerHTML = q.choiceB;
+  dom_choiceC.innerHTML = q.choiceC;
+  dom_choiceD.innerHTML = q.choiceD;
+
 }
 
-function onPlayerSubmit(answer) {
+function checkAnswer(answer) {
   // Update the score, display the next question or the score view
+  const correct = questions[runningQuestionIndex].correct;
+  if(answer == correct) score++ ;
+
+  runningQuestionIndex++;
+  // validate the lenght make sure to dont go out of bounds
+  if (runningQuestionIndex < questions.length) {
+    renderQuestion();
+  } else {
+    // end the quiz and show the score
+    hide(dom_quiz);
+    renderScore();
+    show(dom_score);
+  }
 }
 
-function renderSCore() {
+function renderScore() {
   // calculate the amount of question percent answered by the user
+  const percent = score * 100 / questions.length;
   // choose the image based on the scorePerCent
+  const n = percent + "%";
+
+  let imgSrc = 0;
+
+  if(percent == 100) imgSrc = 100;
+  else if(percent >= 80) imgSrc = 80;
+  else if(percent >= 60) imgSrc = 60;
+  else if(percent >= 40) imgSrc = 40;
+  else if(percent >= 20) imgSrc = 20;
+
+  dom_score.innerHTML = imgSrc == 0 ? 
+  `
+    </p>try again</p>
+    <p>${n}</p>
+  
+  `
+    :
+  `
+    <img src="../X - BONUS - Add a progress bar/img/${imgSrc}.png" alt="percent"></img>
+    <p>${n}</p>
+  `;
+  
 }
 
 // FUNCTIONS ---------------------------------------------------------

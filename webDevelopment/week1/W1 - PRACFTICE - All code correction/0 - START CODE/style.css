@@ -56,8 +56,10 @@ body {
   border: 1px solid rgb(15, 15, 15);
 }
 
-#scoreContainer {
+#score {
   display: flex;
-  justify-content: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;  justify-content: center;
   align-items: center;
 }
