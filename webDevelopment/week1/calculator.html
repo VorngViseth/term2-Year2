@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div>
+        <div>
+            <tr>
+                <td>
+                    <label> Number 1 : 
+                        <input type="number" id="num1" >
+                    </label>
+                </td>
+                <td>
+                    <label> Number 2 : 
+                        <input type="number" id="num2" >
+                    </label>
+                </td>
+            </tr>
+
+            <div>
+                <button onclick="add()">Add</button>
+                <button onclick="subtract()">Subtract</button>
+                <button onclick="multiply()">Multiply</button>
+                <button onclick="divide()">Divide</button>
+            </div>
+            <div>
+                <h2 id="result">Result: </h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const menu = {
+            'Home': '.index.html',
+            'About': '.about.html',
+            'Contact': '.contact.html',
+            'Calculator': '.calculator.html'
+        }
+
+        for (const key in menu) {
+            document.write("<li><a href='"+menu[key]+"'>"+key+"</a></li>");
+        }
+
+        function getInputValues() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            return { num1, num2 };
+        }
+
+        function checkValidInputs(num1, num2) {
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerText = 'Result: Please enter valid numbers';
+                return false;
+            }
+            return true;
+        }
+
+        function add() {
+            const { num1, num2 } = getInputValues();
+            if (!checkValidInputs(num1, num2)) return;
+            const result = num1 + num2;
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+
+        function subtract() {
+            const { num1, num2 } = getInputValues();
+            if (!checkValidInputs(num1, num2)) return;
+            const result = num1 - num2;
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+
+        function multiply() {
+            const { num1, num2 } = getInputValues();
+            if (!checkValidInputs(num1, num2)) return;
+            const result = num1 * num2;
+            
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+
+        function divide() {
+            const { num1, num2 } = getInputValues();
+            if (!checkValidInputs(num1, num2)) return;
+            if (num2 === 0) {
+                document.getElementById('result').innerText = 'Result: Cannot divide by zero';
+            } else {
+                const result = num1 / num2;
+                document.getElementById('result').innerText = 'Result: ' + result;
+            }
+        } 
+    </script>
+</body>
+</html>
