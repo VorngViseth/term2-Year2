@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <script defer type="module" src="edit.js"></script>
+    <link rel="stylesheet" href="../../style.css" />
+</head>
+<body class="edit">
+    <header>
+        <div class="logo">
+            <img src="../../../X - BONUS - Add a progress bar/img/logo.png" alt="logo">
+            <h1>Quiz App</h1>      
+        </div>
+
+        <!-- space between logo and empty div -->
+        <div class="space"></div>
+
+        <nav>
+            <a href="../../index.html">main </a>
+            <a href="../play/play.html">Play Quiz</a>
+        </nav>
+    </header>
+    <div id="main">
+        <div>
+            <button id="addQuestionBtn">add question</button>
+        </div>
+        <ul id="questionList"></ul>
+    </div>
+
+    <div id="dom_addQuestion">
+        <h2>Add Question</h2>
+        <label>Question: <input type="text" id="question"></label><br>
+        <label>Choice A: <input type="text" id="A"></label><br>
+        <label>Choice B: <input type="text" id="B"></label><br>
+        <label>Choice C: <input type="text" id="C"></label><br>
+        <label>Choice D: <input type="text" id="D"></label><br>
+        <label>Correct Answer:
+            <select id="input_correct">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+        </label><br>
+        <button id="cancelBtn">Cancel</button>
+        <button id="submitBtn">Create</button>
+
+    </div>
+</body>
+</html>

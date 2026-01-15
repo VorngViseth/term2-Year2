@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="quiz.js"></script>
-  </head>
-  <body>
-    <div id="start">
-      Start Quiz!
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="main">
+  <header>
+    <div class="logo">
+      <img src="../X - BONUS - Add a progress bar/img/logo.png" alt="logo">
+      <h1>Quiz App</h1>      
     </div>
 
-    <div id="quiz">
-      <div id="question">QQQQQQQQ</div>
+    <!-- space between logo and empty div -->
+    <div class="space"></div>
 
-      <div id="choices">
-        <div class="choice" id="A" onclick="checkAnswer('A')">AAAA</div>
-        <div class="choice" id="B" onclick="checkAnswer('B')">BBBB</div>
-        <div class="choice" id="C" onclick="checkAnswer('C')">CCCC</div>
-        <div class="choice" id="D" onclick="checkAnswer('D')">DD</div>
-      </div>
+    <nav>
+      <a href="./view/edit/edit.html">Edit Quiz</a>
+      <a href="./view/play/play.html">Play Quiz</a>
+    </nav>
+  </header>
+  <main>
+    <img src="../X - BONUS - Add a progress bar/img/welcome.jpg" alt="welcome">
+  </main>
 
-    </div>
 
-    <div id="score"></div>
-
-  </body>
+</body>
 </html>
