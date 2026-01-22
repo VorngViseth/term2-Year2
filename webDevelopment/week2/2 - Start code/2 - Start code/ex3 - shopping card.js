@@ -74,12 +74,12 @@ function removeProductFromCart(productId) {
   // Write your code here  
   const productindex = SHOPPING_CART.findIndex(product => product.id == productId);
 
-  if(!productindex) return;
+  if(productindex === -1) return;
 
   if(SHOPPING_CART[productindex].quantity > 1) {
     SHOPPING_CART[productindex].quantity -= 1;
     return;
-  }
+  } 
 
   SHOPPING_CART.splice(productindex, 1);
 }
