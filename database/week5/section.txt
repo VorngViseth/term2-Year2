@@ -1,0 +1,9 @@
+create table SECTION(
+SecNum INT,
+Year INT,
+Semester INT,
+Instructor VARCHAR(20),
+Course INT,
+PRIMARY KEY (SecNum, Semester, Course),
+constraint fk_course FOREIGN KEY (Course) references COURSE(CNumber)
+);

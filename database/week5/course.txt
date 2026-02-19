@@ -1,0 +1,9 @@
+create table COURSE (
+CNumber INT PRIMARY KEY,
+CName VARCHAR(20),
+Description VARCHAR(20),
+Hours VARCHAR(10),
+Level VARCHAR(20),
+Dep VARCHAR(20),
+CONSTRAINT fk_dep FOREIGN KEY (Dep) REFERENCES DEPARTMENT(Dname)
+);

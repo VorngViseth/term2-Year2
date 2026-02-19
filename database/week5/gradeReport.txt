@@ -1,0 +1,4 @@
+create table GRADE_REPORT (
+LetterGrade VARCHAR(10),
+NumericGrade INT PRIMARY KEY
+);

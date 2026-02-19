@@ -1,0 +1,12 @@
+CREATE TABLE STUDENT_GRADES (
+Student INT,
+CourseNO INT,
+Section INT,
+Semester INT,
+Year INT,
+Grade INT,
+    CONSTRAINT fk_student FOREIGN KEY (Student) REFERENCES STUDENT(SID),
+    CONSTRAINT fk_section FOREIGN KEY (Section, Semester, CourseNo)
+        REFERENCES SECTION(SecNum, Semester, Course),
+    CONSTRAINT fk_grade FOREIGN KEY (Grade) REFERENCES GRADE_REPORT(NumericGrade)
+);

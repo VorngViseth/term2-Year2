@@ -1,0 +1,17 @@
+create table STUDENT (
+	SID INT PRIMARY KEY,
+	FN VARCHAR(10),
+	LN VARCHAR(10),
+	BDate DATE,
+	Sex VARCHAR(10),
+	Class VARCHAR(10),
+	Degree_Program VARCHAR(10),
+	C_Address VARCHAR(10),
+	C_Phone VARCHAR(25),
+	P_Phone VARCHAR(25),
+	City VARCHAR(20),
+	State VARCHAR(20),
+	ZIP INT UNIQUE,
+	Major_Dep VARCHAR(10),
+	Minor_Dep VARCHAR(10)
+);
