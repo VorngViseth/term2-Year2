@@ -1,0 +1,6 @@
+lancd
+Thu Feb 12 03:23:27 PM +07 2026
+/home/lancd/Documents/term2-Year2/operatingSystem/week5/scripts
+ 15:23:27 up  3:07,  1 user,  load average: 0.31, 0.56, 0.64
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p6   99G   62G   33G  66% /
