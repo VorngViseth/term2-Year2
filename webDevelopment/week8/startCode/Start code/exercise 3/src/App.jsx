@@ -27,10 +27,12 @@ export default function App() {
 
   function updateQuantity(index, change) {
     setOrders((prevOrders) => 
-      prevOrders.map((order, i) => 
-        i == index ? {...order, quantity: order.quantity + change < 0 ? 0 : order.quantity + change} 
-        : order
-      )
+      prevOrders.map((order, i) => {
+        if(i == index) {
+          return {...order, quantity: order.quantity + change < 0 ? 0 : order.quantity + change}
+        }
+        return order;
+      })
     )
   }
 
